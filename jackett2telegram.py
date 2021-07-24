@@ -28,10 +28,9 @@ levels = {
     'debug': logging.DEBUG
 }
 
-token = os.environ['TOKEN'] if os.environ.get('TOKEN') else "<YOUR_TOKEN_HERE>"
-chatid = os.environ['CHATID'] if os.environ.get(
-    'CHATID') else "<YOUR_CHATID_HERE>"
-delay = int(os.environ['DELAY']) if os.environ.get('DELAY') else 60
+token = os.environ.get('TOKEN', '')
+chatid = os.environ.get('CHATID', '')
+delay = int(os.environ.get('DELAY', '60'))
 log_level = levels.get(os.environ['LOG_LEVEL'].lower()) if os.environ.get(
     'LOG_LEVEL') else logging.INFO
 
